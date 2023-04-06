@@ -5,7 +5,8 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var request = require('request')
 var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/song');
+var songRouter = require('./routes/song');
+var tokenRouter = require('./routes/token');
 
 var app = express();
 
@@ -22,7 +23,8 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
-app.use('/playing', usersRouter);
+app.use('/playing', tokenRouter);
+app.use('/song', songRouter);
 
 
 

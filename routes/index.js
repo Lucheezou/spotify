@@ -5,7 +5,7 @@ var querystring = require('querystring');
 /* GET TOKEN. */
 router.get('/', function(req, res, next) {
   
-
+  
   var generateRandomString = function(length) {
     var text = '';
     var possible = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
@@ -21,7 +21,7 @@ router.get('/', function(req, res, next) {
   
     var state = generateRandomString(16);
     var scope = 'user-read-private user-read-email user-read-currently-playing';
-  
+
     res.redirect('https://accounts.spotify.com/authorize?' +
       querystring.stringify({
         response_type: 'code',
