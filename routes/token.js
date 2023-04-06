@@ -6,7 +6,7 @@ var querystring = require('querystring');
 /* GET song playing. */
 
 router.get('/', function(req, res, next) {
-  var redirect_uri = 'http://127.0.0.1:3000/playing';
+  var redirect_uri = 'https://lucheezouspotify.onrender.com/playing';
   var client_id = '84e0909b98df4116a0c5028239dc034f';
   var client_secret = '3cf0af0dec724c6f8114f48a8c3a85e1';
   var code = req.query.code || null;

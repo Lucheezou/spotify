@@ -17,7 +17,7 @@ router.get('/', function(req, res, next) {
   };
 
   var client_id = '84e0909b98df4116a0c5028239dc034f';
-  var redirect_uri = 'http://127.0.0.1:3000/playing';
+  var redirect_uri = 'https://lucheezouspotify.onrender.com/playing';
   
     var state = generateRandomString(16);
     var scope = 'user-read-private user-read-email user-read-currently-playing';
