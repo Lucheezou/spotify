@@ -4,7 +4,7 @@ var request = require('request');
 var querystring = require('querystring');
 
 /* GET song playing. */
-
+let rt, at;
 router.get('/', function(req, res, next) {
   var redirect_uri = 'https://lucheezouspotify.onrender.com/playing';
   var client_id = '84e0909b98df4116a0c5028239dc034f';
@@ -36,20 +36,16 @@ router.get('/', function(req, res, next) {
       if (!error && response.statusCode === 200) {
         var access_token = body.access_token,
             refresh_token = body.refresh_token;    
+            at = access_token
+            rt = refresh_token
             console.log("Access Token : " + access_token)
             console.log("Refresh Token : " + refresh_token)
-            console.log("Response : " + body)
-            res.json(body)
+            res.render('index', {rt, at})
+            
       }
-
-      
-      
       }
-        
-        
-        
-        
     )
+    
           
 
  
